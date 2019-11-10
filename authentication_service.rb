@@ -5,7 +5,7 @@ class AuthenticationService
   end
 
   def call
-    user = User.find(@username)
-    user.check_password(@password)
+    user = User.find_by(username: @username)
+    user && user.check_password(@password)
   end
 end
