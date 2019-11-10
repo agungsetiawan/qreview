@@ -1,5 +1,5 @@
 class AuthenticationController < ApplicationController
-  def auth
+  def create
     user = User.find(params[:username])
     if user.check_password(params[:password])
       render json: user
